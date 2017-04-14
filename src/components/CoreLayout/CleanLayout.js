@@ -2,7 +2,7 @@
  * Created by luqianyu on 2017/1/3.
  */
 import React from 'react'
-import Header from '../../components/Header'
+import Header from '../Nav'
 
 import './CoreLayout.css'
 import '../../styles/core.css'

@@ -27,7 +27,7 @@ export const doubleAsync = () => {
           payload : getState().counter
         })
         resolve()
-      }, 200)
+      }, 2000)
     })
   }
 }

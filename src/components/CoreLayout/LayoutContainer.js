@@ -1,14 +1,11 @@
-/**
- * Created by luqianyu on 2017/1/3.
- */
 import { connect } from 'react-redux'
-import { login, signOut } from '../../components/Header/modules/Header-module'
+import { login, signOut } from '../../actions/user'
 import Layout from './CleanLayout'
 
 function mapStateToProps (state) {
   return {
-    isLogin: state.header.isLogin,
-    user: state.header.user
+    isLogin: state.user.isLogin,
+    user: state.user.user
   }
 }
 
