@@ -1,3 +1,7 @@
+/**
+ * Created by luqianyu on 2017/1/6.
+ */
+
 import { connect } from 'react-redux'
 import { login, signOut } from '../../../components/Header/modules/Header-module'
 import popUp from './SignUp-popUp-component'

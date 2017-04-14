@@ -5,11 +5,6 @@ import React from 'react'
 import { browserHistory } from 'react-router'
 import $ from 'jquery'
 import WechatLogin from './Login-wechat'
-import { connect } from 'react-redux'
-// actions
-import { login, signOut } from '../modules/Header-module'
-// components
-import Header from '../components/Header-user'
 
 const User = React.createClass({
   componentDidMount () {
@@ -96,17 +91,3 @@ const User = React.createClass({
 })
 
 export default User
-
-
-
-const mapDispatchToProps = {
-  login: (user) => login(user),
-  signOut: () => signOut()
-}
-
-const mapStateToProps = (state) => ({
-  isLogin: state.user.isLogin,
-  user:    state.user.userName
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
