@@ -96,9 +96,9 @@ if (__DEV__) {
     }
 
     // Setup hot module replacement
+    // module.hot.accept('./containers/AppContainer', () =>
     module.hot.accept('./routes/index', () =>
       setImmediate(() => {
-        console.log("hot")
         ReactDOM.unmountComponentAtNode(MOUNT_NODE)
         render()
       })
