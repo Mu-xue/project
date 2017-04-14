@@ -3,8 +3,9 @@
  */
 import React from 'react'
 import { Button, Modal } from 'react-bootstrap'
-import '../style/header.css'
+import '../header.css'
 
+////
 const WechatLogin = React.createClass({
   componentDidMount() {
     // 在组件加载的时候,加载微信登录框JS引用文件

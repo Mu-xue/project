@@ -1,6 +1,6 @@
 import { injectReducer } from '../../store/reducers'
 
-export const Counter = (store) => ({
+export const counter = (store) => ({
   path : 'counter',
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
