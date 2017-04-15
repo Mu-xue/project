@@ -19,7 +19,6 @@ const Layout = React.createClass({
   }
 })
 
-const Layout 
 
 function mapStateToProps (state) {
   return {
