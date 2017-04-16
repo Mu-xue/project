@@ -4,7 +4,12 @@ import CoreLayout from '../components/CoreLayout'
 import NotFind from '../components/404-not-find'
 import Home from '../containers/Home'
 
-// import * from './demoCompoant'
+import {
+    counter,
+    about,
+    // demo1,
+    // demo2
+} from './demoCompoant'
 
 // import CounterRoute from './Counter'
 // import demoCompoant from '.demoCompoant'
@@ -19,6 +24,11 @@ export const createRoutes = (store) => ({
     component: CoreLayout,
     indexRoute: { component: Home },
     childRoutes: [
+        //demoCompoant
+        //couter为原生的，Facebook官方脚手架的组件
+        counter(store),
+        //about为师兄的野鸡错误示范组件
+        about(store),
         //   CounterRoute(store),
         //   demoCompoant(store),
         //   {

@@ -241,13 +241,12 @@ export class Nav extends Component {
 
                                     <li><a onClick = {() => {browserHistory.push("/aaa")}} tabindex="-1" >Action</a></li>
                                     <li><a onClick = {() => {browserHistory.push("/")}} tabindex="-1" >Another action</a></li>
-                                    <li><a onClick = {() => {browserHistory.push("/")}} tabindex="-1" >Something else here</a></li>
+                                    <li><a onClick = {() => {browserHistory.push("/demoCompoant/counter")}} tabindex="-1" >counter</a></li>
                                     <li class="divider"></li>
-                                    <li><a onClick = {() => {browserHistory.push("/")}} tabindex="-1" >Separated link</a></li>
+                                    <li><a onClick = {() => {browserHistory.push("/demoCompoant/about")}} tabindex="-1" >about</a></li>
 
                                 </ul>
                             </li>
-                            <li className={this.active("/user")}><button onClick={this.test.bind(this)}>tset</button></li>
                         </ul>
                         <ul className='nav navbar-nav navbar-right'>
                             {this.user()}

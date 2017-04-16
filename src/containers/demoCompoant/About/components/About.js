@@ -1,6 +1,3 @@
-/**
- * Created by luqianyu on 2016/12/27.
- */
 import React from 'react'
 import $ from 'jquery'
 
@@ -9,28 +6,28 @@ const About = React.createClass({
     e.preventDefault()
     this.props.addStr(this.refs.tttt.value)
   },
-  handleSubmit2 (e) {
-    e.preventDefault()
-    const that = this
-    $.ajax({
-      method: 'get',
-      url: 'getState.json'
-    }).done(function (data) {
-      that.props.inite.call(that, data.number, data.str)
-      console.log(data.number)
-      console.log(data.str)
-    })
-    $.ajax({
-      method: 'get',
-      url: 'api.hzy.pw/saying/v1/ciba',
-    }).done(function (data) {
+//   handleSubmit2 (e) {
+//     e.preventDefault()
+//     const that = this
+//     $.ajax({
+//       method: 'get',
+//       url: 'getState.json'
+//     }).done(function (data) {
+//       that.props.inite.call(that, data.number, data.str)
+//       console.log(data.number)
+//       console.log(data.str)
+//     })
+//     $.ajax({
+//       method: 'get',
+//       url: 'api.hzy.pw/saying/v1/ciba',
+//     }).done(function (data) {
 
-    })
-  },
+//     })
+//   },
   render () {
     return (
       <div style={{ margin: '0 auto' }} >
-      this is about div
+      <div style={{ fontSize: '38px' }}>bootstarp demo组件示范</div>
         <div>Number: {this.props.number}</div>
         <button onClick={this.props.increNumber}> ADD NUMBER </button>
         <button onClick={this.props.async}> ADD NUMBER </button>
