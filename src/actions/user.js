@@ -12,6 +12,7 @@ export function cheakIfLogin() {
             url: '/api/project/signin',
         });
 
+//有问题，后台逻辑要改，这里跟着改
         if (result.text() === 'sign first')
             return false
         else return true

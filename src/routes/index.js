@@ -15,7 +15,7 @@ import Home from '../containers/Home'
 export const createRoutes = (store) => ({
     path: '/',
     component: CoreLayout,
-    indexRoute: Home,
+    indexRoute: { component: Home },
     childRoutes: [
         //   CounterRoute(store),
         //   demoCompoant(store),
@@ -24,10 +24,10 @@ export const createRoutes = (store) => ({
         //     component   : SignUpRoute
         //   },
         //   UserRoute(store)
-         {
+        {
             path: '*',
             component: NotFind
-      },
+        },
     ]
 })
 
