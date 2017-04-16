@@ -38,7 +38,7 @@ const WechatLogin = React.createClass({
     },
     render() {
         return (
-            <span>
+            <button>
                 <button onClick={this.WxLogin}>微信登录</button>
                 <Modal show={this.state.showModal} onHide={this.close}>
                     <Modal.Header closeButton>
@@ -50,7 +50,7 @@ const WechatLogin = React.createClass({
                         <Button onClick={this.close}>Close</Button>
                     </Modal.Footer>
                 </Modal>
-            </span>
+            </button>
         )
     }
 })
