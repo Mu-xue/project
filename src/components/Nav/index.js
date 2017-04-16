@@ -1,8 +1,16 @@
+import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import $ from 'jquery'
 import WechatLogin from './components/Login-wechat'
 import { browserHistory } from 'react-router'
+
+import {
+    cheakIfLogin,
+    login,
+    signOut
+} from '../../actions/user';
+
 //
 const oldNav = React.createClass({
     componentDidMount() {
@@ -136,13 +144,18 @@ export class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ifLogin: false
+            ifLogin: false,
         };
     }
 
     // 异步接口请求事件
     async getLoginState() {
-        return false
+        const result = await this.props.cheakIfLogin();
+        const ifLogin = (result === "sign first") ? false : true
+
+        this.setState({
+            ifLogin: false
+        })
     }
     async login() {
 
@@ -206,11 +219,12 @@ export class Nav extends Component {
 
 
     componentDidMount() {
-        if (!this.getLoginState()) {
-            this.setState({
-                ifLogin: false
-            })
-        }
+        this.getLoginState()
+    }
+
+    test() {
+
+        // console.log('tag');
     }
 
     render() {
@@ -236,6 +250,7 @@ export class Nav extends Component {
                             <li className={this.active("/about")}><span className="navbar-brand" onClick={() => browserHistory.push('/about')}>ABOUT</span></li>
                             <li className={this.active("/counter")}><span className="navbar-brand" onClick={() => browserHistory.push('/counter')}>counter</span></li>
                             <li className={this.active("/user")}><span className="navbar-brand" onClick={() => browserHistory.push('/user')}>user</span></li>
+                            <li className={this.active("/user")}><span className="navbar-brand" onClick={this.test.bind(this)}>tset</span></li>
                         </ul>
                         <ul className='nav navbar-nav navbar-right'>
                             {this.user()}
@@ -247,5 +262,18 @@ export class Nav extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        isLogin: state.user.isLogin,
+        user: state.user.user
+    }
+}
 
-export default Nav
+const mapDispatchToProps = {
+    login: (user) => login(user),
+    signOut: () => signOut(),
+    cheakIfLogin: () => cheakIfLogin(),
+}
+
+export default Nav = connect(mapStateToProps, mapDispatchToProps)(Nav)
+

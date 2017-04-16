@@ -1,8 +1,12 @@
 import fetch from 'isomorphic-fetch';
 
-export { ajax } from 'jquery'
-
 //用fetch对ajax请求进行封装，便于对接口进行统一管理
+
+function encode(obj) {
+    var str = JSON.stringify(obj);
+    return new Buffer(str).toString('base64');
+}
+
 export function api({
     dispatch,
     getStore,
@@ -11,9 +15,7 @@ export function api({
     body = {},
 }) {
     return new Promise((resolve, reject) => {
-
         url = method === 'GET' ? `${url}?${encode(body)}` : url;
-
         fetch(url, {
             method,
             headers: {
@@ -22,21 +24,22 @@ export function api({
             credentials: 'include',
             body: method === 'POST' ? JSON.stringify(body) : null,
         })
-            .then((res) => res.json())
+            .then((res) => {
+                return res
+            })
             .then((json) => {
-                dispatch(fetchComplete(json))
-                !!showLoading && dispatch(loading(false));
-
                 resolve(json)
-
             })
             .catch((err) => {
                 console.error(err);
             })
     });
 
+}
 
 
-
-
+export function saveLocalStorage(arg) {
+    Object.keys(arg).forEach((element) => {
+            localStorage[element] = arg[element]
+        })
 }

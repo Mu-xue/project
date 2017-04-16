@@ -1,6 +1,7 @@
 // We only need to import the modules necessary for initial render
 
 import CoreLayout from '../components/CoreLayout'
+import NotFind from '../components/404-not-find'
 import Home from '../containers/Home'
 
 // import CounterRoute from './Counter'
@@ -12,18 +13,22 @@ import Home from '../containers/Home'
     PlainRoute objects to build route definitions.   */
 
 export const createRoutes = (store) => ({
-  path        : '/',
-  component   : CoreLayout,
-  indexRoute  : Home,
-  childRoutes : [
-  //   CounterRoute(store),
-  //   demoCompoant(store),
-  //   {
-  //     path        : '/signUp',
-  //     component   : SignUpRoute
-  //   },
-  //   UserRoute(store)
-  ]
+    path: '/',
+    component: CoreLayout,
+    indexRoute: Home,
+    childRoutes: [
+        //   CounterRoute(store),
+        //   demoCompoant(store),
+        //   {
+        //     path        : '/signUp',
+        //     component   : SignUpRoute
+        //   },
+        //   UserRoute(store)
+         {
+            path: '*',
+            component: NotFind
+      },
+    ]
 })
 
 /*  Note: childRoutes can be chunked or otherwise loaded programmatically
