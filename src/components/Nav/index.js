@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react';
-import WechatLogin from './components/Login-wechat'
+// import WechatLogin from './components/Login-wechat'
 import { browserHistory } from 'react-router'
 
 import {
@@ -181,7 +181,6 @@ export class Nav extends Component {
                             <input ref='password' type='text' placeholder='password' />
                             <button onClick={this.btnLogin}>login</button>
                             <button onClick={this.btnSignUp}>sign up</button>
-                            <WechatLogin> </WechatLogin>
                         </div>
                     </div>
                 </ul>
@@ -239,11 +238,11 @@ export class Nav extends Component {
                                 </a>
                                 <ul className='dropdown-menu'>
 
-                                    <li><a onClick = {() => {browserHistory.push("/aaa")}} tabindex="-1" >Action</a></li>
-                                    <li><a onClick = {() => {browserHistory.push("/")}} tabindex="-1" >Another action</a></li>
-                                    <li><a onClick = {() => {browserHistory.push("/demoCompoant/counter")}} tabindex="-1" >counter</a></li>
-                                    <li class="divider"></li>
-                                    <li><a onClick = {() => {browserHistory.push("/demoCompoant/about")}} tabindex="-1" >about</a></li>
+                                    <li><a onClick = {() => {browserHistory.push("/aaa")}} >Action</a></li>
+                                    <li><a onClick = {() => {browserHistory.push("/")}}  >Another action</a></li>
+                                    <li><a onClick = {() => {browserHistory.push("/demoCompoant/counter")}} >counter</a></li>
+                                    <li className="divider"></li>
+                                    <li><a onClick = {() => {browserHistory.push("/demoCompoant/about")}}  >about</a></li>
 
                                 </ul>
                             </li>

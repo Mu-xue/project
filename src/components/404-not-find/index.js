@@ -1,10 +1,9 @@
 import React from 'react'
-import { Jumbotron } from 'react-bootstrap'
 
 export const NotFind = () => (
-    <Jumbotron>
-        <h1>404 NOT find  高级版</h1>
-    </Jumbotron>
+    <div className="jumbotron">
+        <h1>高级 404 NotFind</h1>
+    </div>
 )
 
 export default NotFind
