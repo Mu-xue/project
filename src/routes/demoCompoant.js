@@ -1,7 +1,32 @@
 import { injectReducer } from '../reducers'
 
+// export const demo1 = (store) => ({
+//   path : 'demoCompoant/demo1',
+//   getComponent (nextState, cb) {
+//     require.ensure([], (require) => {
+//       const User = require('../containers/demoCompoant/demo1/containers/UserContainer').default
+//       const reducer = require('../containers/demoCompoant/demo1/modules/UserModule').default
+//       injectReducer(store, { key: 'demo1', reducer })
+//       cb(null, User)
+//     }, 'user')
+//   }
+// })
 
-//
+// export const demo2 = (store) => ({
+//   path : 'demoCompoant/demo2',
+//   getComponent (nextState, cb) {
+//     require.ensure([], (require) => {
+//       const User = require('../containers/demoCompoant/demo2/containers/UserContainer').default
+//       const reducer = require('../containers/demoCompoant/demo2/modules/UserModule').default
+//       injectReducer(store, { key: 'demo2', reducer })
+//       cb(null, User)
+//     }, 'user')
+//   }
+// })
+
+
+//Facebook官方脚手架的示范demoCouter
+
 export const counter = (store) => ({
   path : 'demoCompoant/counter',
   /*  Async getComponent is only invoked when route matches   */
@@ -38,28 +63,4 @@ export const about = (store) => ({
     }, 'user')
   }
 })
-
-// export const demo1 = (store) => ({
-//   path : 'demoCompoant/demo1',
-//   getComponent (nextState, cb) {
-//     require.ensure([], (require) => {
-//       const User = require('../containers/demoCompoant/demo1/containers/UserContainer').default
-//       const reducer = require('../containers/demoCompoant/demo1/modules/UserModule').default
-//       injectReducer(store, { key: 'demo1', reducer })
-//       cb(null, User)
-//     }, 'user')
-//   }
-// })
-
-// export const demo2 = (store) => ({
-//   path : 'demoCompoant/demo2',
-//   getComponent (nextState, cb) {
-//     require.ensure([], (require) => {
-//       const User = require('../containers/demoCompoant/demo2/containers/UserContainer').default
-//       const reducer = require('../containers/demoCompoant/demo2/modules/UserModule').default
-//       injectReducer(store, { key: 'demo2', reducer })
-//       cb(null, User)
-//     }, 'user')
-//   }
-// })
 
