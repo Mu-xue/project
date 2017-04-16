@@ -1,5 +1,4 @@
 const app = require('./main')
-var request = require('ajax-request')
 
 //  session使用示例
 app.use(function (req, res, next) {
@@ -19,6 +18,7 @@ app.use(function (req, res, next) {
     }
     next()
 })
+
 
 
 module.exports = app

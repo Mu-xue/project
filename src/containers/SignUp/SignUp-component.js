@@ -286,7 +286,5 @@ const SignUp = React.createClass({
   }
 })
 
-SignUp.propTypes = {
-  // usernameState:   React.PropTypes.number.isRequired,
-}
+
 export default SignUp

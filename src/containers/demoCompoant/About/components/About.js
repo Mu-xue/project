@@ -71,13 +71,6 @@ const About = React.createClass({
     }
 })
 
-About.propTypes = {
-    addStr: React.PropTypes.func.isRequired,
-    number: React.PropTypes.number.isRequired,
-    increNumber: React.PropTypes.func.isRequired,
-    async: React.PropTypes.func.isRequired,
-    str: React.PropTypes.string.isRequired,
-    inite: React.PropTypes.func.isRequired
-}
+
 
 export default About
