@@ -17,6 +17,7 @@ export const counter = (store) => ({
       /*  Add the reducer to the store on key 'counter'  */
       injectReducer(store, { key: 'counter', reducer })
 
+
       /*  Return getComponent   */
       cb(null, Counter)
 
