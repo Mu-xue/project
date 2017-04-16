@@ -1,0 +1,30 @@
+.my-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  overflow: hidden;
+  opacity: 0.8;
+  background-color: white;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.my-modal-dialog {
+  width: 400px;
+  margin: 10px;
+
+  border-style: solid;
+  border-color: #0f0f0f;
+  border-width: 2px;
+}
+
+.my-close-button {
+  float: right;
+}
+
+.my-close-button:hover {
+  opacity: 0.5;
+}
