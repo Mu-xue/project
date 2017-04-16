@@ -81,13 +81,13 @@ const SignUp = React.createClass({
   usernameExistSpan (usernameState) {
     switch (usernameState) {
       case USERNAME_INVALID_EXIST:
-        return <span> X </span>
+        return <div> X </div>
       case USERNAME_VALID:
-        return <span> √ </span>
+        return <div> √ </div>
       case USERNAME_EMPTY:
-        return <span />
+        return <div />
       default :
-        return <span> X </span>
+        return <div> X </div>
     }
   },
   usernameExistState () {
@@ -108,17 +108,17 @@ const SignUp = React.createClass({
   usernameVerificationSpan () {
     switch (this.state.usernameState) {
       case USERNAME_INVALID_EXIST:
-        return <span className='help-block'> 邮箱已被使用 </span>
+        return <div className='help-block'> 邮箱已被使用 </div>
       case USERNAME_VALID:
-        return <span className='help-block'> 邮箱可用 </span>
+        return <div className='help-block'> 邮箱可用 </div>
       case USERNAME_INVALID_ERROR_FORMAT:
-        return <span className='help-block'> 错误的邮箱格式 </span>
+        return <div className='help-block'> 错误的邮箱格式 </div>
       case USERNAME_INVALID_TOO_SHORT:
-        return <span className='help-block'> 用户名太短 </span>
+        return <div className='help-block'> 用户名太短 </div>
       case USERNAME_INVALID_TOO_LONG:
-        return <span className='help-block'> 用户名太长 </span>
+        return <div className='help-block'> 用户名太长 </div>
       default:
-        return <span className='help-block'> 请输入您的邮箱 </span>
+        return <div className='help-block'> 请输入您的邮箱 </div>
     }
   },
   passwordCheck () {
@@ -156,17 +156,17 @@ const SignUp = React.createClass({
     // }
     switch (passwordState) {
       case PASSWORD_EMPTY:
-        return <span className='help-block'>请输入密码</span>
+        return <div className='help-block'>请输入密码</div>
       case PASSWORD_TOO_LONG:
-        return <span className='help-block'>密码超过二十位</span>
+        return <div className='help-block'>密码超过二十位</div>
       case PASSWORD_TOO_SHORT:
-        return <span className='help-block'>密码长度短于四位</span>
+        return <div className='help-block'>密码长度短于四位</div>
       case PASSWORD_VALID_MIDDLE:
-        return <span className='help-block'>密码强度一般</span>
+        return <div className='help-block'>密码强度一般</div>
       case PASSWORD_VALID_STRONG:
-        return <span className='help-block'>密码强度强</span>
+        return <div className='help-block'>密码强度强</div>
       case PASSWORD_VALID_WEAK:
-        return <span className='help-block'>密码强度弱</span>
+        return <div className='help-block'>密码强度弱</div>
       default:
         return ''
     }
@@ -194,11 +194,11 @@ const SignUp = React.createClass({
   checkPasswordSpan (checkPasswordState) {
     switch (checkPasswordState) {
       case CHECK_PASSWORD_EMPTY:
-        return <span className='help-block'>再次输入密码</span>
+        return <div className='help-block'>再次输入密码</div>
       case CHECK_PASSWORD_INCONFORMITY:
-        return <span className='help-block'>两次密码输入不一致</span>
+        return <div className='help-block'>两次密码输入不一致</div>
       case CHECK_PASSWORD_VALID:
-        return <span className='help-block'>两次密码输入一致</span>
+        return <div className='help-block'>两次密码输入一致</div>
     }
   },
   getCaptcha () {
@@ -280,7 +280,7 @@ const SignUp = React.createClass({
 
         <input type='checkbox' checked={this.state.accessState} onChange={this.changeAccess} />
         <label>
-          <span> 接受 <TermsOfService /> {'  '} </span>
+          <div> 接受 <TermsOfService /> {'  '} </div>
         </label>
         { this.signUpPopUp() }
 

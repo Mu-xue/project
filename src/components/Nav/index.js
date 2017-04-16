@@ -172,7 +172,7 @@ export class Nav extends Component {
                     aria-haspopup='true'
                     aria-expanded='false'>
                     Login
-          <span className='caret'> </span>
+          <div className='caret'> </div>
                 </a>
                 <ul className='dropdown-menu'>
                     <div>
@@ -218,12 +218,12 @@ export class Nav extends Component {
                             data-toggle='collapse'
                             data-target='#bs-example-navbar-collapse-1'
                             aria-expanded='false'>
-                            <span className='sr-only'>Toggle navigation</span>
-                            <span className='icon-bar'> </span>
-                            <span className='icon-bar'> </span>
-                            <span className='icon-bar'> </span>
+                            <div className='sr-only'>Toggle navigation</div>
+                            <div className='icon-bar'> </div>
+                            <div className='icon-bar'> </div>
+                            <div className='icon-bar'> </div>
                         </button>
-                        <span className='navbar-brand' onClick={() => browserHistory.push('/')}>Main</span>
+                        <div className='navbar-brand' onClick={() => browserHistory.push('/')}>Main</div>
                     </div>
 
                     <div className='collapse navbar-collapse'>
@@ -235,7 +235,7 @@ export class Nav extends Component {
                                     aria-haspopup='true'
                                     aria-expanded='false'>
                                     demo
-                                <span className='caret'> </span>
+                                <div className='caret'> </div>
                                 </a>
                                 <ul className='dropdown-menu'>
 
