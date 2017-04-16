@@ -5,6 +5,8 @@ const About = React.createClass({
     handleSubmit1(e) {
         e.preventDefault()
         this.props.addStr(this.refs.tttt.value)
+
+
     },
 
     //   handleSubmit2 (e) {
