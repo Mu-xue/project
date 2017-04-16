@@ -1,12 +1,12 @@
 import fetch from 'isomorphic-fetch';
 
-//用fetch对ajax请求进行封装，便于对接口进行统一管理
 
 function encode(obj) {
     var str = JSON.stringify(obj);
     return new Buffer(str).toString('base64');
 }
 
+//用fetch对ajax请求进行封装，便于对接口进行统一管理
 export function api({
     dispatch,
     getStore,
@@ -37,9 +37,22 @@ export function api({
 
 }
 
+//localStorage 操作
+//可能未来会增加认证操作，加密操作等等等等
+//所以要封装起来，现在是简单的直接操作LocalStorage
 
-export function saveLocalStorage(arg) {
+export function setLocalStorage(arg) {
     Object.keys(arg).forEach((element) => {
-            localStorage[element] = arg[element]
-        })
+        localStorage.setItem(element, arg[element]);
+    })
+}
+
+export function clearLocalStorage() {
+    localStorage.clear()
+}
+
+export function deletLocalStorageItem(arg) {
+    Object.keys(arg).forEach((element) => {
+        localStorage[element] = arg[element]
+    })
 }

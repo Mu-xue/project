@@ -56,12 +56,6 @@ const oldNav = React.createClass({
         })
     },
     btnSignOut(e) {
-        localStorage.clear()
-        e.preventDefault()
-        $.ajax({
-            url: '/api/project/signout',
-            method: 'GET'
-        })
         this.props.signOut()
     },
     user(isLogin) {
@@ -144,35 +138,23 @@ export class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ifLogin: false,
+
         };
     }
 
     // 异步接口请求事件
     async getLoginState() {
+
         const result = await this.props.cheakIfLogin();
-        const ifLogin = (result === "sign first") ? false : true
-
-        this.setState({
-            ifLogin: false
-        })
-    }
-    async login() {
+        return (result === "sign first") ? false : true
 
     }
-    async signOut() {
-        this.setState({
-            ifLogin: false
-        })
-    }
-
 
     btnSignUp() {
         browserHistory.push('/signUp')
     }
     btnSignOut(e) {
-        localStorage.clear()
-
+        this.props.signOut()
     }
 
     user() {
@@ -217,9 +199,10 @@ export class Nav extends Component {
         } else return ""
     }
 
-
     componentDidMount() {
-        this.getLoginState()
+        if(this.getLoginState()) {
+
+        }
     }
 
     test() {

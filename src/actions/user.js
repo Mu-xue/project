@@ -1,4 +1,4 @@
-import { api } from './common.js'
+import { api, saveLocalStorage, clearLocalStorage } from './common.js'
 export const LOGIN = 'LOGIN'
 export const SINGOUT = 'SIGNOUT'
 export const CHEAK_IF_LOGIN = "CHEAK_IF_LOGIN"
@@ -23,6 +23,7 @@ export function cheakIfLogin() {
     };
 }
 
+//login 现在有问题
 export function login(arg) {
     return async (dispatch, getStore) => {
         const result = await api({
@@ -38,11 +39,33 @@ export function login(arg) {
 
         if (result.text() === 'sign failed, name or password error')
             return false
-        else return true
 
         dispatch({
-            type: CHEAK_IF_LOGIN,
+            type: LOGIN,
+            user: user,
+            password: password
         })
+
+        saveLocalStorage(result.json()[0])
+
+    };
+}
+
+export function signOut(arg) {
+    return async (dispatch, getStore) => {
+        const result = await api({
+            dispatch,
+            getStore,
+            url: '/api/project/signout',
+            method: 'GET'
+        });
+
+        dispatch({
+            type: SINGOUT,
+        })
+
+        clearLocalStorage()
+
 
     };
 }
@@ -55,13 +78,14 @@ export function login(arg) {
 //     }
 // }
 
-export function signOut() {
-    return {
-        type: SINGOUT
-    }
-}
+// export function signOut() {
+//     return {
+//         type: SINGOUT
+//     }
+// }
 
 export const actions = {
+    cheakIfLogin,
     login,
     signOut
 }
