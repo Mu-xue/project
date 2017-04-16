@@ -4,6 +4,8 @@ import CoreLayout from '../components/CoreLayout'
 import NotFind from '../components/404-not-find'
 import Home from '../containers/Home'
 
+// import * from './demoCompoant'
+
 // import CounterRoute from './Counter'
 // import demoCompoant from '.demoCompoant'
 // import SignUpRoute from './SignUp'

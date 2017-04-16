@@ -198,7 +198,7 @@ export class Nav extends Component {
     }
 
     componentDidMount() {
-        if(this.getLoginState()) {
+        if (this.getLoginState()) {
 
         }
     }
@@ -226,12 +226,22 @@ export class Nav extends Component {
                         <span className='navbar-brand' onClick={() => browserHistory.push('/')}>Main</span>
                     </div>
 
-                    <div className='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+                    <div className='collapse navbar-collapse'>
                         <ul className='nav navbar-nav'>
-                            <li className={this.active("/about")}><span className="navbar-brand" onClick={() => browserHistory.push('/about')}>ABOUT</span></li>
-                            <li className={this.active("/counter")}><span className="navbar-brand" onClick={() => browserHistory.push('/counter')}>counter</span></li>
-                            <li className={this.active("/user")}><span className="navbar-brand" onClick={() => browserHistory.push('/user')}>user</span></li>
-                            <li className={this.active("/user")}><span className="navbar-brand" onClick={this.test.bind(this)}>tset</span></li>
+                            <li className='dropdown'>
+                                <a href='#'
+                                    className='dropdown-toggle'
+                                    data-toggle='dropdown' role='button'
+                                    aria-haspopup='true'
+                                    aria-expanded='false'>
+                                    demo
+                                <span className='caret'> </span>
+                                </a>
+                                <ul className='nav nav-tabs nav-stacked'>
+                                    <ui>aa</ui>
+                                </ul>
+                            </li>
+                            <li className={this.active("/user")}><button onClick={this.test.bind(this)}>tset</button></li>
                         </ul>
                         <ul className='nav navbar-nav navbar-right'>
                             {this.user()}
