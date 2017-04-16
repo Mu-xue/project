@@ -237,8 +237,14 @@ export class Nav extends Component {
                                     demo
                                 <span className='caret'> </span>
                                 </a>
-                                <ul className='nav nav-tabs nav-stacked'>
-                                    <ui>aa</ui>
+                                <ul className='dropdown-menu'>
+
+                                    <li><a onClick = {() => {browserHistory.push("/aaa")}} tabindex="-1" >Action</a></li>
+                                    <li><a onClick = {() => {browserHistory.push("/")}} tabindex="-1" >Another action</a></li>
+                                    <li><a onClick = {() => {browserHistory.push("/")}} tabindex="-1" >Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a onClick = {() => {browserHistory.push("/")}} tabindex="-1" >Separated link</a></li>
+
                                 </ul>
                             </li>
                             <li className={this.active("/user")}><button onClick={this.test.bind(this)}>tset</button></li>
