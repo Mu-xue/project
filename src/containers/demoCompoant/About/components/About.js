@@ -5,6 +5,8 @@ const About = React.createClass({
     handleSubmit1(e) {
         e.preventDefault()
         this.props.addStr(this.refs.tttt.value)
+
+
     },
 
     //   handleSubmit2 (e) {
@@ -30,6 +32,8 @@ const About = React.createClass({
             <div style={{ margin: '0 auto' }} >
                 <div style={{ fontSize: '38px' }} className='help-block'>bootstarp demo组件示范</div>
                 <div style={{ fontSize: '24px' }}>这整个组件都很多毛病，各种野鸡写法，是个错误示范</div>
+                <div> 功能函数和事件已经被注释掉了 </div>
+                <div> 注意看console React.createClass 方法已经废弃，但是还面前能用所以会报错</div>
                 <div>Number: {this.props.number}</div>
                 <button onClick={this.props.increNumber}> ADD NUMBER </button>
                 <button onClick={this.props.async}> ADD NUMBER </button>
