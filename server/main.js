@@ -64,6 +64,7 @@ app.get('/api/project/signin', function (req, res) {
  * 通过输入用户名和密码登录，并建立和保存session
  */
 app.post('/api/project/signin', function (req, res) {
+
     let username = req.body.username
     let password = req.body.password
     let query = { username: username, password: password }
