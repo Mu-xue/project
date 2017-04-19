@@ -1,5 +1,5 @@
 const project = require('../config/project.config')
-const app = require('../server/newServer')
+const app = require('../server/main')
 const debug = require('debug')('app:bin:dev-server')
 
 project.env = 'production'

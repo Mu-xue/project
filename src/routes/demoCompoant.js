@@ -56,11 +56,11 @@ export const about = (store) => ({
   path : 'demoCompoant/about',
   getComponent (nextState, cb) {
     require.ensure([], (require) => {
-      const User = require('../containers/demoCompoant/About/containers/AboutContainer').default
+      const about = require('../containers/demoCompoant/About/containers/AboutContainer').default
       const reducer = require('../containers/demoCompoant/About/modules/About').default
       injectReducer(store, { key: 'about', reducer })
-      cb(null, User)
-    }, 'user')
+      cb(null, about)
+    }, 'about')
   }
 })
 
