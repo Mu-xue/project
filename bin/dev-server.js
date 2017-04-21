@@ -1,5 +1,5 @@
 const project = require('../config/project.config')
-const app = require('../server/newServer.js')
+const app = require('../server/main')
 const debug = require('debug')('app:bin:dev-server')
 
 app.listen(project.server_port)
