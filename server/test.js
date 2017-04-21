@@ -3,3 +3,4 @@
 //re-construction
 //fsssdsd
 
+const aaa;
