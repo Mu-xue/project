@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
 
         res.send({
             number: req.session.counter,
-            str: temp
+            str: tem
         })
     }
     next()
@@ -22,3 +22,4 @@ app.use(function (req, res, next) {
 
 
 module.exports = app
+
