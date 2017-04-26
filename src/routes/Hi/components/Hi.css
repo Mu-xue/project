@@ -1,0 +1,12 @@
+.photo {
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 5px;
+}
+
+.remove-comment {
+    background: transparent;
+    border: none;
+}

@@ -118,6 +118,8 @@ export const Header = React.createClass({
               <li className={this.active("/about")}><Link to='/about'>ABOUT</Link></li>
               <li className={this.active("/counter")}><Link to='/counter'>counter</Link></li>
               <li className={this.active("/user")}><Link to='/user'>user</Link></li>
+              <li className={this.active("/hello")}><Link to='/hello'>hello</Link></li>
+              <li className={this.active("/hi")}><Link to='/hi'>hi</Link></li>
             </ul>
             <ul className='nav navbar-nav navbar-right'>
               {this.user(this.props.isLogin)}

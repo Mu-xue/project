@@ -7,6 +7,8 @@ import CounterRoute from './Counter'
 import AboutRoute from './About'
 import SignUpRoute from './SignUp'
 import UserRoute from './User'
+import HelloRoute  from './Hello'
+import HiRoute from './Hi'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -22,7 +24,9 @@ export const createRoutes = (store) => ({
       path        : '/signUp',
       component   : SignUpRoute
     },
-    UserRoute(store)
+    UserRoute(store),
+    HelloRoute(),
+    HiRoute(store)
   ]
 })
 
